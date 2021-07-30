@@ -1,0 +1,23 @@
+<!DOCTYPE json>
+
+function mudarLink() {
+  var baixar = document.getElementById('baixar');
+  baixar.href = "http://cdn.sstatic.net/img/share-sprite-new.svg?v=24e64812c790";
+  baixar.innerHTML = "Baixar imagem Stack Exchange";
+}
+<button onclick="mudarLink()">Mude o Link</button>
+<a id="baixar" href="http://cdn.sstatic.net/br/img/sprites.svg?v=e26b234630f5" download>Baixar imagem Stack Overflow</a>
+
+<select id="tipo_documento" name="tipo_documento">
+<option value="" disabled="disabled" selected="selected">.:: Modelos de Documentos ::.</option>
+<option value="Documentos/DayCamp/Contrato.doc">Contrato.doc</option>
+<option value="Documentos/DayCamp/Orçamento.doc">Orçamento.doc</option>
+</select>
+
+<a href="#" download id="btnBaixarModelo" name="btnBaixarModelo" class="btn bg-purple form-control pull-right"  title="Baixar Modelo">
+<i class="fa fa-cloud-download mao" title="Baixar Modelo"></i>
+</a>
+
+$('#frmOrcamento #tipo_documento').on('change',function(){
+var url = $(this).val();$('#frmOrcamento #btnBaixarModelo').attr({'href':url});
+})
